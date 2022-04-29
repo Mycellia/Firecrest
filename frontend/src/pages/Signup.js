@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/auth";
-import axios from "axios";
 import { Container } from "../Styles";
 import { FormButton } from "./Contact/ContactStyles";
 
@@ -41,14 +40,14 @@ const Signup = ({ signup, isAuthenticated }) => {
     <Container>
       <div className="container mt-5">
         <h1>Sign Up</h1>
-        <p>Create your Account</p>
+        <p>Create an Account</p>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
               className="form-control"
               type="text"
               placeholder="First Name*"
-              name="first_name"
+              name="name"
               value={first_name}
               onChange={(e) => onChange(e)}
               required
@@ -104,7 +103,7 @@ const Signup = ({ signup, isAuthenticated }) => {
         </form>
 
         <p className="mt-3">
-          Already have an account? <Link to="/login">Sign In</Link>
+          Do you already have an account? <Link to="/login">Sign In</Link>
         </p>
       </div>
     </Container>
