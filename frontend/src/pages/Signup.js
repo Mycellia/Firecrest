@@ -3,7 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/auth";
 import axios from "axios";
-import { Container } from "../globalStyles";
+import { Container } from "../Styles";
 import { FormButton } from "./Contact/ContactStyles";
 
 const Signup = ({ signup, isAuthenticated }) => {

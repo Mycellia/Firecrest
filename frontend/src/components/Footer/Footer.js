@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { Button } from "../../globalStyles";
+import { Button } from "../../Styles";
 
 function Footer() {
   return (

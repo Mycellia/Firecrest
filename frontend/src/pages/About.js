@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../globalStyles";
+import { Container } from "../Styles";
 
 export const About = () => {
   return (

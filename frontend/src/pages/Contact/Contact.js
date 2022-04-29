@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container } from "../../globalStyles";
+import { Container } from "../../Styles";
 import {
   FormButton,
   FormColumn,
