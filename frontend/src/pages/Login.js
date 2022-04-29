@@ -54,7 +54,7 @@ const Login = ({ login, isAuthenticated }) => {
               required
             />
           </div>
-          <FormButton type="submit">Create Account</FormButton>
+          <FormButton type="submit">Sign In</FormButton>
         </form>
         <p className="mt-3">
           {/* Already have an Account ? <Link to="/login">Sign in</Link> */}

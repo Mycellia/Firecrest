@@ -100,7 +100,7 @@ const Signup = ({ signup, isAuthenticated }) => {
               required
             />
           </div>
-          <FormButton type="submit">Create Account</FormButton>
+          <FormButton type="submit">Create</FormButton>
         </form>
 
         <p className="mt-3">
