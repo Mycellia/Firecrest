@@ -5,11 +5,12 @@ import { login } from "../actions/auth";
 import { FormButton } from "./Contact/ContactStyles";
 import { Container } from "../globalStyles";
 
-export const Login = ({ login, isAuthenticated }) => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
   const { email, password } = formData;
 
   const onChange = (e) =>
@@ -17,6 +18,7 @@ export const Login = ({ login, isAuthenticated }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     login(email, password);
   };
   if (isAuthenticated) {
@@ -27,7 +29,7 @@ export const Login = ({ login, isAuthenticated }) => {
     <Container>
       <div className="container mt-5">
         <h1>Sign In</h1>
-        <p>Sign into your Account</p>
+        <p>Sign into your account</p>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
@@ -52,10 +54,10 @@ export const Login = ({ login, isAuthenticated }) => {
               required
             />
           </div>
-          <FormButton type="submit">Sign In</FormButton>
+          <FormButton type="submit">Create Account</FormButton>
         </form>
-
         <p className="mt-3">
+          {/* Already have an Account ? <Link to="/login">Sign in</Link> */}
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
         <p className="mt-3">
@@ -66,8 +68,6 @@ export const Login = ({ login, isAuthenticated }) => {
   );
 };
 
-// const mapStateToProps = state => ({
-
-// });
+// const mapStateToProps = (state) => ({});
 
 export default connect(null, { login })(Login);
