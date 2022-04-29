@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Navbar className="color-nav" expand="lg">
       <Container>
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <img
             alt=""
             src="/assets/Firecrest-logo.png"
@@ -26,13 +26,15 @@ const Header = () => {
             <Nav.Link className="link" as={Link} to="/about">
               About
             </Nav.Link>
-            <Nav.Link className="link" as={Link} to="/contact">
+            <Nav.Link className="link" as={Link} to="/contact-us">
               Contact Us
             </Nav.Link>
           </Nav>
-          <Button className="button" variant="outline-success">
-            Sign In
-          </Button>
+          <Nav.Link className="link" as={Link} to="/login">
+            <Button className="button" variant="outline-success">
+              Sign In
+            </Button>
+          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
