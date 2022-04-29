@@ -2,14 +2,11 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const FormSection = styled.div`
-  /* color: #fff; */
   padding: 160px 0;
-  /* background: ${({ inverse }) => (inverse ? "#101522" : "#fff")}; */
   background: grey;
 `;
 
 export const FormTitle = styled.h1`
-  // margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
@@ -19,11 +16,9 @@ export const FormContainer = styled.div`
   display: flex;
 `;
 export const FormColumn = styled.div`
-  /* margin-bottom: 15px; */
   padding: 50px;
   background: white;
   border: 20px;
-  /* padding: ${({ small }) => (small ? "0 50px" : "0 15px")}; */
   flex: 1;
   max-width: 60%;
   display: flex;
@@ -52,7 +47,6 @@ export const FormRow = styled.div`
 `;
 
 export const FormWrapper = styled.form`
-  /* max-width: 540px; */
   padding-top: 0;
   width: 100%;
 `;
@@ -94,19 +88,6 @@ export const FormLabel = styled.label`
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
   color: #afafaf;
-`;
-export const FormImgWrapper = styled.div`
-  max-width: 555px;
-  display: flex;
-  justify-content: ${({ start }) => (start ? "flex-start" : "flex-end")};
-`;
-export const FormImg = styled.img`
-  padding-right: 0;
-  border: 0;
-  max-width: 100%;
-  vertical-align: middle;
-  display: inline-block;
-  max-height: 500px;
 `;
 
 export const FormButton = styled.button`

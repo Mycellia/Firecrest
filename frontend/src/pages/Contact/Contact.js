@@ -18,23 +18,24 @@ export const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  // const [error, setError] = useState(null);
-  // const [success, setSuccess] = useState(null);
+  const [confirmPass, setConfirmPass] = useState("");
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const resultError = validateForm({ name, email, message });
+    const resultError = validateForm({ name, email, message });
 
-    // if (resultError !== null) {
-    //   setError(resultError);
-    //   return;
-    // }
-    // setName("");
-    // setEmail("");
-    // setMessage("");
-    // setConfirmPass("");
-    // setError(null);
-    // setSuccess("Application was submitted!");
+    if (resultError !== null) {
+      setError(resultError);
+      return;
+    }
+    setName("");
+    setEmail("");
+    setMessage("");
+    setConfirmPass("");
+    setError(null);
+    setSuccess("Application was submitted!");
   };
 
   const messageVariants = {
@@ -85,7 +86,7 @@ export const Contact = () => {
                 Send
               </FormButton>
             </FormWrapper>
-            {/* {error && (
+            {error && (
               <FormMessage
                 variants={messageVariants}
                 initial="hidden"
@@ -94,8 +95,8 @@ export const Contact = () => {
               >
                 {error}
               </FormMessage>
-            )} */}
-            {/* {success && (
+            )}
+            {success && (
               <FormMessage
                 variants={messageVariants}
                 initial="hidden"
@@ -103,7 +104,7 @@ export const Contact = () => {
               >
                 {success}
               </FormMessage>
-            )} */}
+            )}
           </FormColumn>
         </FormRow>
       </Container>
