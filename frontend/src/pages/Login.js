@@ -68,6 +68,8 @@ const Login = ({ login, isAuthenticated }) => {
   );
 };
 
-// const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
 
 export default connect(null, { login })(Login);
