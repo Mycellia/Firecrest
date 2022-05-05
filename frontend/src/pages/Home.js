@@ -1,7 +1,8 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import "./Home.css";
 import Hero from "../components/Hero/Hero";
+import { Button } from "../components/Header/HeaderStyle";
 
 export const Home = () => {
   return (
@@ -154,7 +155,7 @@ export const Home = () => {
             </div>
 
             <div class="form-group my-3">
-              <Button class="button">Find Flights</Button>
+              <Button> Find Flights</Button>
               {/* <Button>Search Flights</Button> */}
             </div>
           </form>
