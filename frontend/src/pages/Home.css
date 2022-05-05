@@ -1,0 +1,193 @@
+
+.home{
+    /* background-color: #8190A5; */
+    background-size: 100% 100%;
+}
+.form{
+    /* frontend/src/image/Firecrest.png */
+        background-size: cover;
+        height: calc(100% + 50px);
+        
+}
+.back{
+    background-color: #8190A5;
+    /* width: fit-content; */
+    width: max-content;
+    margin: auto;
+    /* margin-left: 22px; */
+    margin-top: 22px;
+}
+
+.mb-3{
+    margin-top: 7px;
+    padding-bottom: 20px;
+    margin-left: 7px;
+    margin-right: 7px;
+
+}
+
+
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto
+}
+
+.wrapper form {
+    padding: 30px 50px
+}
+
+.wrapper form .form-group {
+    text-align: center;
+    padding-bottom: .5rem
+    
+}
+
+.wrapper form .option {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: block
+}
+
+.wrapper form .option input {
+    display: none
+}
+
+.wrapper form .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 50%
+}
+
+.wrapper form .option input:checked~.checkmark:after {
+    display: block
+}
+
+.wrapper form .option .checkmark:after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    display: block;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 48%;
+    left: 52%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out 0s
+}
+
+.wrapper form .option:hover input[type="radio"]~.checkmark {
+    background-color: #f4f4f4
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark {
+    background: #fff;
+    color: #fff;
+    transition: 300ms ease-in-out 0s
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark:after {
+    transform: translate(-50%, -50%) scale(1);
+    color: #fff
+}
+
+.wrapper form a {
+    color: #333
+}
+
+.wrapper form .form-control {
+    outline: none;
+    border: none
+}
+
+.wrapper form .form-control:focus {
+    box-shadow: none
+}
+
+.wrapper form input[type="text"]:focus::placeholder {
+    color: transparent
+}
+
+input[type="date"] {
+    cursor: pointer
+}
+
+.wrapper form .label::after {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    font-size: 0.9rem;
+    margin: 0rem 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    color: #999;
+    transition: all .2s ease-in-out;
+    transform: scale(0)
+}
+
+.wrapper form .label#from::after {
+    content: 'Departure'
+}
+
+.wrapper form .label#to::after {
+    content: 'Arrival'
+}
+
+.wrapper form .label#depart::after {
+    content: 'Departure Date'
+}
+
+.wrapper form .label#return::after {
+    content: 'Return Date'
+}
+
+.wrapper form .label#psngr.passengers::after {
+    content: 'Passengers'
+}
+
+.wrapper form .label#psngr.class::after {
+    content: 'Class'
+}
+
+.wrapper form .label#psngr.airlines::after {
+    content: 'Airlines'
+}
+
+
+.wrapper form input[type="text"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.wrapper form input[type="date"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.margin {
+    margin: 2rem 0rem
+}
+
+@media(max-width: 575.5px) {
+    .wrapper {
+        margin: 10px
+    }
+
+    .wrapper form {
+        padding: 20px
+    }
+
+    .margin {
+        margin: .2rem 0rem
+    }
+}
+
