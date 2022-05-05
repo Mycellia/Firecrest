@@ -71,6 +71,12 @@
   box-sizing: border-box;
 }
 
+.footer-copyright {  
+  padding: 5px 0;
+  margin-bottom: -18px;
+}
+
+
 
 .footer-link-items a {
   color: #fff;

@@ -15,21 +15,13 @@ function Footer() {
             <Link to="/contact-us">Contact Us</Link>
           </div>
         </div>
-        <div className="footer-link-wrapper">
-          <div class="footer-link-items-subscription">
-            <p className="footer-subscription-text">
-              You can unsubscribe at any time.
-            </p>
-            <div className="input-areas">
-              <form className="input-areas">
-                <input
-                  className="footer-input"
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                />
-              </form>
-              <Button buttonStyle="btn--outline">Subscribe</Button>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>Copyright Firecrest © 2022. All rights reserved.</p>
             </div>
           </div>
         </div>
