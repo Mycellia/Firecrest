@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { login } from "../actions/auth";
 import { FormButton } from "./Contact/ContactStyles";
 import { Container } from "../Styles";
+import { Button } from "../components/Header/HeaderStyle";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -54,7 +55,7 @@ const Login = ({ login, isAuthenticated }) => {
               required
             />
           </div>
-          <FormButton type="submit">Sign In</FormButton>
+          <Button type="submit">Sign In</Button>
         </form>
         <p className="mt-3">
           {/* Already have an Account ? <Link to="/login">Sign in</Link> */}

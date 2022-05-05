@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { signup } from "../actions/auth";
 import { Container } from "../Styles";
 import { FormButton } from "./Contact/ContactStyles";
+import { Button } from "../components/Header/HeaderStyle";
 
 const Signup = ({ signup, isAuthenticated }) => {
   const [accountCreated, setAccountCreated] = useState(false);
@@ -99,7 +100,8 @@ const Signup = ({ signup, isAuthenticated }) => {
               required
             />
           </div>
-          <FormButton type="submit">Create</FormButton>
+
+          <Button type="submit">Create</Button>
         </form>
 
         <p className="mt-3">

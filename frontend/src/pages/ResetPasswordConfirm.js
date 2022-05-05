@@ -3,7 +3,6 @@ import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { reset_password_confirm } from "../actions/auth";
 import { Button, Container } from "../Styles";
-import { FormButton } from "./Contact/ContactStyles";
 
 const ResetPasswordConfirm = ({ match, reset_password_confirm }) => {
   const [requestSent, setRequestSent] = useState(false);
@@ -59,7 +58,8 @@ const ResetPasswordConfirm = ({ match, reset_password_confirm }) => {
               required
             />
           </div>
-          <FormButton type="submit">Reset</FormButton>
+
+          <Button type="submit">Reset</Button>
         </form>
       </div>
     </Container>
