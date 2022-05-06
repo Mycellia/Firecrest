@@ -39,7 +39,7 @@ const Login = ({ login, isAuthenticated }) => {
               placeholder="Email"
               name="email"
               value={email}
-              onChange={(e) => onChange(e)}
+              onChange={e => onChange(e)}
               required
             />
           </div>
@@ -50,7 +50,7 @@ const Login = ({ login, isAuthenticated }) => {
               placeholder="Password"
               name="password"
               value={password}
-              onChange={(e) => onChange(e)}
+              onChange={e => onChange(e)}
               minLength="6"
               required
             />
@@ -69,7 +69,7 @@ const Login = ({ login, isAuthenticated }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
 

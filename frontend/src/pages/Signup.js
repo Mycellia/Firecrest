@@ -9,14 +9,15 @@ import { Button } from "../components/Header/HeaderStyle";
 const Signup = ({ signup, isAuthenticated }) => {
   const [accountCreated, setAccountCreated] = useState(false);
   const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
     email: "",
+    name: "",
     password: "",
     re_password: "",
+    phone: "",
+    passport_number: "",
   });
 
-  const { first_name, last_name, email, password, re_password } = formData;
+  const { email, name, password, re_password, phone, passport_number } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,7 +26,7 @@ const Signup = ({ signup, isAuthenticated }) => {
     e.preventDefault();
 
     if (password === re_password) {
-      signup(first_name, last_name, email, password, re_password);
+      signup(email, name, password, re_password, phone, passport_number);
       setAccountCreated(true);
     }
   };
@@ -47,20 +48,9 @@ const Signup = ({ signup, isAuthenticated }) => {
             <input
               className="form-control"
               type="text"
-              placeholder="First Name*"
+              placeholder="First Name and Last Name*"
               name="name"
-              value={first_name}
-              onChange={(e) => onChange(e)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Last Name*"
-              name="last_name"
-              value={last_name}
+              value={name}
               onChange={(e) => onChange(e)}
               required
             />
@@ -72,6 +62,28 @@ const Signup = ({ signup, isAuthenticated }) => {
               placeholder="Email*"
               name="email"
               value={email}
+              onChange={(e) => onChange(e)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Phone Number*"
+              name="phone"
+              value={phone}
+              onChange={(e) => onChange(e)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Passport Number*"
+              name="passport_number"
+              value={passport_number}
               onChange={(e) => onChange(e)}
               required
             />
