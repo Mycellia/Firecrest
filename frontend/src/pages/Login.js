@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../actions/auth";
-import { FormButton } from "./Contact/ContactStyles";
 import { Container } from "../Styles";
-import { Button } from "../components/Header/HeaderStyle";
+import { Button } from "../components/Button";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({

@@ -2,7 +2,7 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import "./Home.css";
 import Hero from "../components/Hero/Hero";
-import { Button } from "../components/Header/HeaderStyle";
+import { Button } from "../components/Button";
 
 export const Home = () => {
   return (
