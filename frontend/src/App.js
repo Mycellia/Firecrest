@@ -8,13 +8,13 @@ import { Contact } from "./pages/Contact/Contact";
 import Activate from "./pages/Activate";
 import ResetPassword from "./pages/ResetPassword";
 import ResetPasswordConfirm from "./pages/ResetPasswordConfirm";
-
 import Login from "./pages/Login";
+import Book from "./pages/Book";
 import Signup from "./pages/Signup";
 import { Provider } from "react-redux";
 import store from "./store";
 
-function App() {
+function App(){
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -22,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/book" element={<Book />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -32,7 +33,8 @@ function App() {
         <Footer />
       </BrowserRouter>
     </Provider>
+
+    
   );
 }
-
 export default App;
