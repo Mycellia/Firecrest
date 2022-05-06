@@ -48,7 +48,7 @@ const Signup = ({ signup, isAuthenticated }) => {
               className="form-control"
               type="text"
               placeholder="First Name*"
-              name="name"
+              name="first_name"
               value={first_name}
               onChange={(e) => onChange(e)}
               required
