@@ -283,6 +283,12 @@ export default function Book() {
                   <strong>Airline:</strong> <span>{item.airline_name}</span>
                 </tr>
               </table>
+
+              <button class="button">
+                {" "}
+                Book a seat for {item.departing_airport} to{" "}
+                {item.arriving_airport}
+              </button>
             </div>
           ))}
         </ul>
