@@ -9,6 +9,7 @@ class Airline(models.Model):
 
 class Flight_Seat(models.Model):
     seat_id = models.CharField(max_length=100)
+    flight_class = models.CharField(max_length=20, null=True)
 
 
 class Flight(models.Model):

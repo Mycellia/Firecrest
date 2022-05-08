@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react";
-
+import { API_URL } from "../config/index";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Book() {
   const [error, setError] = useState(null);
@@ -10,6 +11,7 @@ export default function Book() {
 
   const [q, setQ] = useState("");
   const [searchParam] = useState([
+    "id",
     "departing_airport",
     "arriving_airport",
     "arriving_gate",
@@ -61,6 +63,8 @@ export default function Book() {
   //            }
   //        });
   //    }
+
+  function setFlight() {}
 
   function search(items) {
     //Remove from filter search if criteria does not match
@@ -165,7 +169,7 @@ export default function Book() {
   } else {
     return (
       <div className="wrapper">
-        <div className="search-wrapper">
+        <div className="">
           {/* <label htmlFor="search-form">
                             <input
                                 placeholder="Search for..."
@@ -283,12 +287,17 @@ export default function Book() {
                   <strong>Airline:</strong> <span>{item.airline_name}</span>
                 </tr>
               </table>
-
-              <button class="button">
+              <Link
+                class="button"
+                to={{
+                  pathname: "/checkout/{item.id}",
+                  data: item.id,
+                }}
+              >
                 {" "}
                 Book a seat for {item.departing_airport} to{" "}
                 {item.arriving_airport}
-              </button>
+              </Link>
             </div>
           ))}
         </ul>

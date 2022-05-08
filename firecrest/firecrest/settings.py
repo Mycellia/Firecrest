@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'djoser',
     'accounts',
     'flights',
+    'payments',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist'
 ]
@@ -88,8 +89,15 @@ WSGI_APPLICATION = 'firecrest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'FirecrestDB',
+        'USER': 'admin',
+        'PASSWORD': 'password',
+        'HOST': 'mydatabase.cude05saaeda.us-east-1.rds.amazonaws.com',
+        'PORT': 3306,
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
     }
 }
 
@@ -140,12 +148,18 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',),
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    #     'rest_framework.authentication.TokenAuthentication',
+    #     'rest_framework.authentication.SessionAuthentication',
+    # ),
 
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': [],
 }
 
 # JSON WEB TOKEN is the authentication scheme
@@ -205,6 +219,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:3000",
 ]
 
+
+SITE_URL = 'http://localhost:3000'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
