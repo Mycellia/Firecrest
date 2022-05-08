@@ -82,14 +82,6 @@ export const Home = () => {
             <div class="form-group d-sm-flex margin">
               <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative">
                 {" "}
-                {/* <input
-                  type="text"
-                  required
-                  placeholder="Passenger"
-                  class="form-control"
-                />
-                <div class="label" id="psngr.passenger"></div>{" "}
-                <span class="fas fa-users text-muted"></span> */}
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Control
                     as="select"
@@ -108,14 +100,6 @@ export const Home = () => {
 
               <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative">
                 {" "}
-                {/* <input
-                  type="text"
-                  required
-                  placeholder="Class"
-                  class="form-control"
-                />
-                <div class="label" id="psngr.class"></div>{" "}
-                <span class="fas fa-users text-muted"></span> */}
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Control as="select" name="Class" placeholder="Class">
                     <option>Class</option>
@@ -129,14 +113,6 @@ export const Home = () => {
 
               <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative">
                 {" "}
-                {/* <input
-                  type="text"
-                  required
-                  placeholder="Airlines"
-                  class="form-control"
-                />
-                <div class="label" id="psngr.airlines"></div>{" "}
-                <span class="fas fa-users text-muted"></span> */}
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Control
                     as="select"
@@ -156,7 +132,6 @@ export const Home = () => {
 
             <div class="form-group my-3">
               <Button> Find Flights</Button>
-              {/* <Button>Search Flights</Button> */}
             </div>
           </form>
         </div>
