@@ -146,6 +146,8 @@ import { API_URL } from "../config/index";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero/Hero";
+import { Container } from "../Styles";
+import { Form } from "react-bootstrap";
 
 export default function Home() {
   const [error, setError] = useState(null);
@@ -311,8 +313,9 @@ export default function Home() {
     return (
       <div className="wrapper">
         <Hero />
-        <div className="back">
-          {/* <label htmlFor="search-form">
+        <Form className="back">
+          <div className="">
+            {/* <label htmlFor="search-form">
                             <input
                                 placeholder="Search for..."
                                 value={q}
@@ -320,91 +323,92 @@ export default function Home() {
                             />
                         </label> */}
 
-          <div className="select">
-            <strong> Departing Airport </strong>
-            <select
-              onChange={(e) => {
-                setDAFilterParam(e.target.value);
-              }}
-              className="custom-select"
-            >
-              <option value="">None</option>
-              <option value="London Heathrow">London Heathrow</option>
-              <option value="London Gatwick">London Gatwick</option>
-            </select>
-            <span className="focus"></span>
-          </div>
+            <div className="select">
+              <strong> Departing Airport </strong>
+              <select
+                onChange={(e) => {
+                  setDAFilterParam(e.target.value);
+                }}
+                className="custom-select"
+              >
+                <option value="">None</option>
+                <option value="London Heathrow">London Heathrow</option>
+                <option value="London Gatwick">London Gatwick</option>
+              </select>
+              <span className="focus"></span>
+            </div>
 
-          <div className="select">
-            <strong> Arriving Airports </strong>
-            <select
-              onChange={(e) => {
-                setAAFilterParam(e.target.value);
-              }}
-              className="custom-select"
-            >
-              <option value="">None</option>
-              <option value="Paris CDG">Paris CDG</option>
-              <option value="New York JFK">JFK</option>
-            </select>
-            <span className="focus"></span>
+            <div className="select">
+              <strong> Arriving Airports </strong>
+              <select
+                onChange={(e) => {
+                  setAAFilterParam(e.target.value);
+                }}
+                className="custom-select"
+              >
+                <option value="">None</option>
+                <option value="Paris CDG">Paris CDG</option>
+                <option value="New York JFK">JFK</option>
+              </select>
+              <span className="focus"></span>
+            </div>
+            <div className="select">
+              <strong> Departing Gate </strong>
+              <select
+                onChange={(e) => {
+                  setDGFilterParam(e.target.value);
+                }}
+                className="custom-select"
+              >
+                <option value="">None</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="B3">B3</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+                <option value="C3">C3</option>
+              </select>
+              <span className="focus"></span>
+            </div>
+            <div className="select">
+              <strong> Arriving Gate </strong>
+              <select
+                onChange={(e) => {
+                  setAGFilterParam(e.target.value);
+                }}
+                className="custom-select"
+              >
+                <option value="">None</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="B3">B3</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+                <option value="C3">C3</option>
+              </select>
+              <span className="focus"></span>
+            </div>
+            <div className="select">
+              <strong> Airline </strong>
+              <select
+                onChange={(e) => {
+                  setAFilterParam(e.target.value);
+                }}
+                className="custom-select"
+              >
+                <option value="">None</option>
+                <option value="1">Virgin Atlantic</option>
+              </select>
+              <span className="focus"></span>
+            </div>
           </div>
-          <div className="select">
-            <strong> Departing Gate </strong>
-            <select
-              onChange={(e) => {
-                setDGFilterParam(e.target.value);
-              }}
-              className="custom-select"
-            >
-              <option value="">None</option>
-              <option value="A1">A1</option>
-              <option value="A2">A2</option>
-              <option value="A3">A3</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="B3">B3</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-              <option value="C3">C3</option>
-            </select>
-            <span className="focus"></span>
-          </div>
-          <div className="select">
-            <strong> Arriving Gate </strong>
-            <select
-              onChange={(e) => {
-                setAGFilterParam(e.target.value);
-              }}
-              className="custom-select"
-            >
-              <option value="">None</option>
-              <option value="A1">A1</option>
-              <option value="A2">A2</option>
-              <option value="A3">A3</option>
-              <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="B3">B3</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
-              <option value="C3">C3</option>
-            </select>
-            <span className="focus"></span>
-          </div>
-          <div className="select">
-            <strong> Airline </strong>
-            <select
-              onChange={(e) => {
-                setAFilterParam(e.target.value);
-              }}
-              className="custom-select"
-            >
-              <option value="">None</option>
-              <option value="1">Virgin Atlantic</option>
-            </select>
-            <span className="focus"></span>
-          </div>
-        </div>
+        </Form>
         <ul>
           {search(items).map((item) => (
             <div class="card mt-3">
