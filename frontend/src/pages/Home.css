@@ -1,20 +1,16 @@
 
 .home{
-    /* background-color: #8190A5; */
     background-size: 100% 100%;
 }
 .form{
-    /* frontend/src/image/Firecrest.png */
         background-size: cover;
         height: calc(100% + 50px);
         
 }
 .back{
     background-color: #8190A5;
-    /* width: fit-content; */
     width: max-content;
     margin: auto;
-    /* margin-left: 22px; */
     margin-top: 22px;
 }
 
@@ -190,4 +186,12 @@ input[type="date"] {
         margin: .2rem 0rem
     }
 }
+
+.About {
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding: 30px;
+   
+  }
 

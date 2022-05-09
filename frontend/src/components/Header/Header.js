@@ -1,61 +1,61 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import { Navbar, Nav, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../../actions/auth";
 import { Button } from "../../components/Header/HeaderStyle";
 import "./Header.css";
 
-const Header = () => {
-  return (
-    <>
-      {/* <Navbar
-        collapseOnSelect
-        className="color-nav"
-        expand="lg"
-        style={{ zindex: 2 }}
-      >
-        <Container fluid>
-          <Navbar.Brand href="/">
-            <img
-              alt=""
-              src="/assets/Firecrest-logo.png"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{" "}
-            Firecrest
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link
-                className="link"
-                as={Link}
-                to="/book"
-                data-toggle="collapse"
-                data-target=".navbar-collapse"
-              >
-                Book
-              </Nav.Link>
-              <Nav.Link className="link" as={Link} to="/about">
-                About
-              </Nav.Link>
-              <Nav.Link className="link" as={Link} to="/contact-us">
-                Contact Us
-              </Nav.Link>
-            </Nav>
+const Header = ({ logout, isAuthenticated }) => {
+  const [redirect, setRedirect] = useState(false);
 
-            <Nav className="d-flex">
-              <Link to="/login">
-                <Button>Sign In</Button>
-              </Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
+  const logout_user = () => {
+    logout();
+    setRedirect(true);
+  };
+
+  const guestLinks = () => (
+    <Fragment>
+      <li className="nav-item">
+        <Link className="nav-link" to="/login">
+          Login
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/signup">
+          Sign Up
+        </Link>
+      </li>
+    </Fragment>
+  );
+
+  const authLinks = () => (
+    <Fragment>
+      <li className="nav-item">
+        <Link className="nav-link " to="/book">
+          Book
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/about">
+          About
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="contact-us">
+          Contact Us
+        </Link>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#!" onClick={logout_user}>
+          Logout
+        </a>
+      </li>
+    </Fragment>
+  );
+
+  return (
+    <Fragment>
       <Navbar collapseOnSelect className="color-nav" expand="lg">
         <Container>
           <Navbar.Brand href="/">
@@ -71,20 +71,18 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="book">Book</Nav.Link>
-              <Nav.Link href="about">About</Nav.Link>
-              <Nav.Link href="contact-us">Contact Us</Nav.Link>
-            </Nav>
-            <Nav>
-              <Nav.Link href="login">
-                {" "}
-                <Button>Sign In</Button>
-              </Nav.Link>
+              {isAuthenticated ? authLinks() : guestLinks()}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </>
+      {redirect ? <Navigate to="/" /> : <Fragment></Fragment>}
+    </Fragment>
   );
 };
-export default Header;
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { logout })(Header);
