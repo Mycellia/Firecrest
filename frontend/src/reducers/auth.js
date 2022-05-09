@@ -33,6 +33,13 @@ export default function (state = initialState, action) {
         isAuthenticated: true,
       };
     case LOGIN_SUCCESS:
+      localStorage.setItem('access', payload.access);
+      return{
+        ...state,
+        isAuthenticated: true,
+        access: payload.access,
+        refresh: payload.refresh
+      }
 
     case SIGNUP_SUCCESS:
       return {
@@ -56,6 +63,15 @@ export default function (state = initialState, action) {
       };
 
     case LOGIN_FAIL:
+      localStorage.removeItem('access');
+      localStorage.removeItem('refresh');
+      return{
+        ...state,
+        access: null,
+        refresh: null,
+        isAuthenticated: null,
+        user: null,
+      }
     case SIGNUP_FAIL:
     case LOGOUT:
       localStorage.removeItem("access");
