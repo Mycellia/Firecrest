@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, Form } from "react-bootstrap";
 import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../actions/auth";
-import { Button } from "../../components/Header/HeaderStyle";
+import { Button } from "../../components/Header/Header";
 import "./Header.css";
 
 const Header = ({ logout, isAuthenticated }) => {

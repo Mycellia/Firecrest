@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact/Contact";
 import { StripePayment } from "./pages/StripePayment";

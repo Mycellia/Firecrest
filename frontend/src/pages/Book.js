@@ -64,8 +64,6 @@ export default function Book() {
   //        });
   //    }
 
-  function setFlight() {}
-
   function search(items) {
     //Remove from filter search if criteria does not match
     return items.filter((item) => {
