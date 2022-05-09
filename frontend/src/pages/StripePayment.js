@@ -21,8 +21,6 @@ export function StripePayment() {
     }
   }, []);
 
-  const { data } = this.props.location;
-
   return (
     <section>
       <div className="product">
@@ -31,7 +29,7 @@ export function StripePayment() {
           <h3>Flight Ticket</h3>
           <h5>£50</h5>
           <p id="flightInfo"></p>
-          <p>{data.departing_gate}</p>
+          {/* <p>{data.departing_gate}</p> */}
         </div>
       </div>
       <form

@@ -290,8 +290,7 @@ export default function Book() {
               <Link
                 class="button"
                 to={{
-                  pathname: "/checkout/{item.id}",
-                  data: item.id,
+                  pathname: "/checkout",
                 }}
               >
                 {" "}

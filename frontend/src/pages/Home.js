@@ -2,16 +2,16 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import "./Home.css";
 import Hero from "../components/Hero/Hero";
-import { Button } from "../components/Header/HeaderStyle";
+import { Button } from "./../components/Header/HeaderStyle";
 
-export function Home() {
+export const Home = () => {
   return (
-    <Hero>
+    <>
       <Hero />
       <Form className="back">
-        <div className="wrapper bg-white">
+        <div class="wrapper bg-white">
           <form action="#">
-            <div className="form-group border-bottom d-flex align-items-center justify-content-between flex-wrap">
+            <div class="form-group border-bottom d-flex align-items-center justify-content-between flex-wrap">
               {" "}
               <label class="option my-sm-0 my-2">
                 {" "}
@@ -32,7 +32,7 @@ export function Home() {
                 </a>{" "}
               </div>
             </div>
-            <div className="form-group d-sm-flex margin">
+            <div class="form-group d-sm-flex margin">
               <div class="d-flex align-items-center flex-fill me-sm-1 my-sm-0 my-4 border-bottom position-relative">
                 {" "}
                 <input
@@ -56,7 +56,7 @@ export function Home() {
                 <span class="fas fa-map-marker text-muted"></span>
               </div>
             </div>
-            <div className="form-group d-sm-flex margin">
+            <div class="form-group d-sm-flex margin">
               <div class="d-flex align-items-center flex-fill me-sm1 my-sm-0 border-bottom position-relative">
                 {" "}
                 <input
@@ -78,17 +78,10 @@ export function Home() {
                 <div class="label" id="return"></div>
               </div>
             </div>
-            <div className="form-group d-sm-flex margin">
+
+            <div class="form-group d-sm-flex margin">
               <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative">
                 {" "}
-                {/* <input
-                  type="text"
-                  required
-                  placeholder="Passenger"
-                  class="form-control"
-                />
-                <div class="label" id="psngr.passenger"></div>{" "}
-                <span class="fas fa-users text-muted"></span> */}
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Control
                     as="select"
@@ -107,14 +100,6 @@ export function Home() {
 
               <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative">
                 {" "}
-                {/* <input
-                  type="text"
-                  required
-                  placeholder="Class"
-                  class="form-control"
-                />
-                <div class="label" id="psngr.class"></div>{" "}
-                <span class="fas fa-users text-muted"></span> */}
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Control as="select" name="Class" placeholder="Class">
                     <option>Class</option>
@@ -128,14 +113,6 @@ export function Home() {
 
               <div class="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative">
                 {" "}
-                {/* <input
-                  type="text"
-                  required
-                  placeholder="Airlines"
-                  class="form-control"
-                />
-                <div class="label" id="psngr.airlines"></div>{" "}
-                <span class="fas fa-users text-muted"></span> */}
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Control
                     as="select"
@@ -155,11 +132,10 @@ export function Home() {
 
             <div class="form-group my-3">
               <Button> Find Flights</Button>
-              {/* <Button>Search Flights</Button> */}
             </div>
           </form>
         </div>
       </Form>
-    </Hero>
+    </>
   );
-}
+};
