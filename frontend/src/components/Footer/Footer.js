@@ -11,7 +11,6 @@ function Footer() {
           <div class="footer-link-items">
             <Link to="/signup">How it works</Link>
             <Link to="/about">About</Link>
-            <Link to="/book">Book</Link>
             <Link to="/contact-us">Contact Us</Link>
           </div>
         </div>

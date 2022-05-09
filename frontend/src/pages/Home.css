@@ -57,7 +57,7 @@
     width: 17px;
     background-color: #fff;
     border: 1px solid #aaa;
-    border-radius: 50%
+    border-radius: 100px;
 }
 
 .wrapper form .option input:checked~.checkmark:after {
