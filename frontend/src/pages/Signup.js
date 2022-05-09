@@ -3,8 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../actions/auth";
 import { Container } from "../Styles";
-import { FormButton } from "./Contact/ContactStyles";
-import { Button } from "../components/Header/HeaderStyle";
+import { Button } from "../components/Button";
 
 const Signup = ({ signup, isAuthenticated }) => {
   const [accountCreated, setAccountCreated] = useState(false);
@@ -62,6 +61,7 @@ const Signup = ({ signup, isAuthenticated }) => {
               placeholder="Email*"
               name="email"
               value={email}
+
               onChange={(e) => onChange(e)}
               required
             />
@@ -117,7 +117,7 @@ const Signup = ({ signup, isAuthenticated }) => {
         </form>
 
         <p className="mt-3">
-          Do you already have an account? <Link to="/login">Sign In</Link>
+          Already have an account? <Link to="/login">Sign In</Link>
         </p>
       </div>
     </Container>

@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { reset_password } from "../actions/auth";
 import { Container } from "../Styles";
-import { FormButton } from "./Contact/ContactStyles";
+import { Button } from "../components/Button";
 
 const ResetPassword = ({ reset_password }) => {
   const [requestSent, setRequestSent] = useState(false);
@@ -43,7 +43,7 @@ const ResetPassword = ({ reset_password }) => {
               required
             />
           </div>
-          <FormButton type="submit">Reset</FormButton>
+          <Button type="submit">Reset</Button>
         </form>
       </div>
     </Container>
